@@ -1,0 +1,63 @@
+﻿<div class="container" style="width: 500px">
+    <div class="row">
+        <div class="collapse" id="formCollapse">
+            <form id="userform" name="userform" role="form" class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" ng-model="homeCtrl.formData.fullName" placeholder="First and last name" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label for="dozenNo">How many in a dozen?</label>
+                        <input type="number" class="form-control" id="dozenNo" ng-model="homeCtrl.formData.dozen" placeholder="Enter a number" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="skyColor">What colour is the sky?</label>
+                        <input type="text" id="skyColor" class="form-control" ng-model="homeCtrl.formData.skyColor" dropdownvalidator required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label for="dateTimePicker">Select 3:30pm on May 21, 2015</label>
+                        <div class="input-group date" id="dateTimePicker">
+                            <input type="text" id="date" class="form-control" ng-model="homeCtrl.formData.selectedDateTime" datetimevalidator required />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="players">Select 2 LA Lakers</label>
+                        <input type="text" id="players" class="form-control" ng-model="homeCtrl.formData.players" multiselectvalidator required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="favoriteSaying">Enter your favorite saying</label>
+                        <input type="text" class="form-control" id="favoriteSaying" ng-model="homeCtrl.formData.favoriteSaying" placeholder="Can be on any topic" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="pull-right">
+                            <button class="btn btn-primary" ng-click="homeCtrl.submit()" ng-disabled="userform.$invalid" ng-bind="homeCtrl.label"></button>
+                        </div>
+                    </div>
+                </div>
+           <div>{{userform.$error}}</div>
+            </form>
+        </div>
+        <div class="collapse" id="resultCollapsse">
+            <div ng-if="homeCtrl.isReady" class="angular" style="text-align: center">
+                <h3>Thank you for your submission!</h3>
+                <h4>Your Score</h4>
+                <span class="chart" easypiechart percent="homeCtrl.percent" options="homeCtrl.scorePercentOpts">
+                    <span class="percent" ng-bind="homeCtrl.percent"></span>
+                </span>
+                <p>
+                    <button type="button" class="btn btn-primary" ng-click="homeCtrl.resubmit()">Resubmit</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

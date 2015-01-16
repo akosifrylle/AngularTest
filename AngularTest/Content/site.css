@@ -1,0 +1,40 @@
+﻿body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.chart {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+    .chart canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+.percent {
+    display: inline-block;
+    line-height: 145px;
+    z-index: 2;
+}
+
+    .percent:after {
+        content: '%';
+        margin-left: 0.1em;
+        font-size: .8em;
+    }
+
+.angular {
+    margin-top: 0;
+}
+
+    .angular .chart {
+        margin-top: 0;
+    }

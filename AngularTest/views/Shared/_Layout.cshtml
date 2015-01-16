@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @Styles.Render("~/Content/css")
+</head>
+<body ng-app="myApp">
+    <div ng-view>
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/scripts/app.js")
+    @Scripts.Render("~/scripts/services/UnnamedService.js")
+    @Scripts.Render("~/scripts/directives/directives.js")
+    @Scripts.Render("~/scripts/controllers/HomeController.js")
+</body>
+</html>
