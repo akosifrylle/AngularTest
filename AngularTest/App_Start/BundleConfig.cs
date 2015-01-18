@@ -15,10 +15,12 @@ namespace AngularTest
                     "~/Scripts/angular-route.js",
                     "~/Scripts/angular-resource.js",
                     "~/Scripts/angular.easypiechart.js",
+                    "~/Scripts/angular-sanitize.js",
                     "~/Scripts/restangular.js",
                     "~/Scripts/lodash.js",
                     "~/Scripts/angular-ui/ui-bootstrap.js",
-                    "~/Scripts/angular-ui/ui-bootstrap-tpls.js"));
+                    "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
+                    "~/Scripts/select.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -29,17 +31,18 @@ namespace AngularTest
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/moment.js",
-                      "~/Scripts/bootstrap-datetimepicker.js",
-                      "~/Scripts/select2.js"));
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/moment.js",
+                "~/Scripts/bootstrap-datetimepicker.js",
+                "~/Scripts/select2.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
-                      "~/Content/bootstrap-datetimepicker.css",
+                      "~/Content/bootstrap-datetimepicker.css",                
                       "~/Content/css/select2.css",
                       "~/Content/css/select2-bootstrap.css",
+                      "~/Content/css/select.css",   
                       "~/Content/site.css"));
         }
     }

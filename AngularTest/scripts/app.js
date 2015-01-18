@@ -2,10 +2,13 @@
 (function (MyApp) {
     var app = angular.module('myApp', [
         'ngResource',
+        'ngSanitize',
         'ngRoute',
+        'ui.select',
         'ui.bootstrap',
         'easypiechart',
-        'restangular']);
+        'restangular'
+    ]);
 
     app.config([
         '$routeProvider', function ($routeProvider) {

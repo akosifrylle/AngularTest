@@ -1,9 +1,13 @@
 ﻿module MyApp {
-    var app = angular.module('myApp', ['ngResource',
+    var app = angular.module('myApp', [
+        'ngResource',
+        'ngSanitize',
         'ngRoute',
+        'ui.select',
         'ui.bootstrap',
         'easypiechart',
-        'restangular']);
+        'restangular'
+    ]);
 
     app.config([
         '$routeProvider', ($routeProvider: ng.route.IRouteProvider) => {

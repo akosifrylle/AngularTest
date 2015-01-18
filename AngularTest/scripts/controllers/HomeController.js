@@ -24,14 +24,15 @@ var MyApp;
                 this.label = "Submit";
                 this.isReady = false;
 
-                this.colors = [
-                    { id: 0, text: 'Blue' },
-                    { id: 1, text: 'Green' },
-                    { id: 2, text: 'Red' },
-                    { id: 3, text: 'Orange' },
-                    { id: 4, text: 'Purple' },
-                    { id: 5, text: 'Brown' }
-                ];
+                //this.colors = [
+                //    { id: 0, text: 'Blue' },
+                //    { id: 1, text: 'Green' },
+                //    { id: 2, text: 'Red' },
+                //    { id: 3, text: 'Orange' },
+                //    { id: 4, text: 'Purple' },
+                //    { id: 5, text: 'Brown' }
+                //];
+                this.colors = ['Blue', 'Green', 'Red', 'Orange', 'Purple', 'Brown'];
 
                 this.players = [
                     { id: 0, text: 'LeBron James' },
