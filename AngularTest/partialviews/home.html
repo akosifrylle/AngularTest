@@ -23,27 +23,25 @@
                             </ui-select-choices>
                         </ui-select>
 
-                        <p>Selected: {{homeCtrl.formData.skyColor}}</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-6">
                         <label for="dateTimePicker">Select 3:30pm on May 21, 2015</label>
                         <div class="input-group date" id="dateTimePicker">
-                            <input type="text" id="date" class="form-control" ng-model="homeCtrl.formData.selectedDateTime" required />
+                            <input type="text" id="date" class="form-control" ng-model="homeCtrl.formData.selectedDateTime" />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="players">Select 2 LA Lakers</label>
                         <!--<input type="text" id="players" class="form-control" ng-model="homeCtrl.formData.players" multiselectvalidator required />-->
-                        <ui-select multiple ng-model="homeCtrl.formData.players" theme="select2" ng-disabled="disabled" class="form-control" required>
+                        <ui-select multiple ng-model="homeCtrl.formData.players" theme="select2" ng-disabled="disabled" class="form-control" multiselectvalidator>
                             <ui-select-match placeholder="Select 2 LA Lakers...">{{$item.text}}</ui-select-match>
                             <ui-select-choices repeat="player in homeCtrl.players | filter:$select.search">
                                 <div ng-bind-html="player.text | highlight: $select.search"></div>
                             </ui-select-choices>
                         </ui-select>
-                        <p>Selected: {{homeCtrl.formData.players}}</p>
                     </div>
                 </div>
                 <div class="form-group">

@@ -18,5 +18,24 @@
             }).otherwise({ redirectTo: '/Home' });
         }
     ]);
+
+    app.directive('multiselectvalidator', function () {
+        return {
+            require: 'ngModel',
+            link: function (scope, elm, attrs, ctrl) {
+                ctrl.$validators.multiselectvalidator = function (modelValue, viewValue) {
+                    if (ctrl.$isEmpty(modelValue)) {
+                        // empty models are not valid
+                        return false;
+                    }
+
+                    if (modelValue.length == 2) {
+                        return true;
+                    }
+                    return false;
+                };
+            }
+        };
+    });
 })(MyApp || (MyApp = {}));
 //# sourceMappingURL=app.js.map

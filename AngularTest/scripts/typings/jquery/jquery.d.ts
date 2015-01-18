@@ -3571,6 +3571,8 @@ interface JQuery {
      * @param elements One or more elements to add to the set of matched elements.
      */
     add(...elements: Element[]): JQuery;
+    collapse(): any;
+    collapse(obj: any): any;
     /**
      * Add elements to the set of matched elements.
      * 

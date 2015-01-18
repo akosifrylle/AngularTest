@@ -19,4 +19,42 @@
                 .otherwise({ redirectTo: '/Home' });
         }
     ]);
+
+    app.directive('multiselectvalidator', () => {
+        return {
+            require: 'ngModel',
+            link: (scope, elm, attrs, ctrl) => {
+                ctrl.$validators.multiselectvalidator = (modelValue, viewValue) => {
+           
+                    if (ctrl.$isEmpty(modelValue)) {
+                        // empty models are not valid
+                        return false;
+                    }
+
+                    if (modelValue.length == 2) {
+                        return true;
+                    }
+                    return false;
+                };
+            }
+        };
+    });
+    //.directive('datetimevalidator', () => {
+    //        return {
+    //            require: 'ngModel',
+    //            link: (scope, elem, attrs, ctrl) => {
+    //                ctrl.$validators.datetimevalidator = (modelValue, viewValue) => {
+                        
+    //                    console.log(modelValue);
+    //                    console.log(viewValue);
+    //                    if (viewValue) {
+    //                        modelValue = viewValue;
+    //                        return true;
+    //                    } else {
+    //                        return false;
+    //                    }
+    //                };
+    //            }
+    //        }
+    //    })
 }
