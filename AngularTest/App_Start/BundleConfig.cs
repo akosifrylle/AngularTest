@@ -33,17 +33,18 @@ namespace AngularTest
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/moment.js",
-                "~/Scripts/bootstrap-datetimepicker.js",
-                "~/Scripts/select2.js"));
+                "~/Scripts/select2.js",
+                "~/Scripts/bootstrap-datetimepicker.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-theme.css",
-                      "~/Content/bootstrap-datetimepicker.css",                
-                      "~/Content/css/select2.css",
-                      "~/Content/css/select2-bootstrap.css",
-                      "~/Content/css/select.css",   
-                      "~/Content/site.css"));
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-theme.css",
+                "~/Content/bootstrap-datetimepicker.css",
+                "~/Content/select.css",
+                "~/Content/css/select2.css",
+                "~/Content/selectize.default.css",
+                "~/Content/css/select2-bootstrap.css",
+                "~/Content/site.css"));
         }
     }
 }

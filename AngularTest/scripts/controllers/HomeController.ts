@@ -19,10 +19,14 @@ module MyApp.Controllers {
             private $scope: ng.IScope,
             private unnamedService: MyApp.Services.UnnamedService) {
 
+            this.formData = new MyApp.Models.FormData();
+
             $("#formCollapse").collapse();
             $("#resultCollapsse").collapse({
                 toggle: false
             });
+
+            $("#dateTimePicker").datetimepicker();
 
             this.initializeForm();
             this.initializeResult();
@@ -32,23 +36,18 @@ module MyApp.Controllers {
                 this.$scope.$apply();
             });
 
+            $("#dateTimePicker").on('change.dp', () => {
+                var value = $("#actualDate").val();
+                this.formData.selectedDateTime = value;
+            });
         }
 
         public initializeForm() {
             this.label = "Submit";
             this.isReady = false;
-            
-            //this.colors = [
-            //    { id: 0, text: 'Blue' },
-            //    { id: 1, text: 'Green' },
-            //    { id: 2, text: 'Red' },
-            //    { id: 3, text: 'Orange' },
-            //    { id: 4, text: 'Purple' },
-            //    { id: 5, text: 'Brown' }
-            //];
 
             this.colors = ['Blue', 'Green', 'Red', 'Orange', 'Purple', 'Brown'];
-            
+
             this.players = [
                 { id: 0, text: 'LeBron James' },
                 { id: 1, text: 'Michael Clarke' },
@@ -57,25 +56,6 @@ module MyApp.Controllers {
                 { id: 4, text: 'Nick Young' },
                 { id: 5, text: 'Paul Pierce' }
             ];
-
-            $("#skyColor").select2({
-                placeholder: 'Please select...',
-                allowClear: true,
-                data: this.colors,
-                formatSelection: (item) => { return item.text; },
-                formatResult: (item) => { return item.text; }
-            });
-            $("#players").select2({
-                multiple: true,
-                placeholder: 'Please select...',
-                data: this.players,
-                formatSelection: (item) => { return item.text; },
-                formatResult: (item) => { return item.text; },
-                maximumSelectionSize: 2
-            });
-
-            $("#dateTimePicker").datetimepicker();
-
         }
 
         public initializeResult() {
@@ -112,7 +92,7 @@ module MyApp.Controllers {
                 }, (error) => {
                         console.error(error);
                     });
-            }, 3000);
+            }, 2000);
 
         }
         public open($event) {

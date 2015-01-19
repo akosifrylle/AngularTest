@@ -15,9 +15,8 @@
                     </div>
                     <div class="col-md-6">
                         <label for="skyColor">What colour is the sky?Jason</label>
-                        <!--<input type="text" id="skyColor" class="form-control" ng-model="homeCtrl.formData.skyColor" required />-->
-                        <ui-select ng-model="homeCtrl.formData.skyColor" theme="select2" ng-disabled="disabled" class="form-control" required>
-                            <ui-select-match placeholder="What colour is the sky?">{{$select.selected}}</ui-select-match>
+                        <ui-select id="skyColor" ng-model="homeCtrl.formData.skyColor" theme="select2" ng-disabled="disabled" class="form-control" required>
+                            <ui-select-match allow-clear placeholder="What colour is the sky?">{{$select.selected}}</ui-select-match>
                             <ui-select-choices repeat="color in homeCtrl.colors | filter:$select.search">
                                 <div ng-bind-html="color | highlight: $select.search"></div>
                             </ui-select-choices>
@@ -29,15 +28,14 @@
                     <div class="col-md-6">
                         <label for="dateTimePicker">Select 3:30pm on May 21, 2015</label>
                         <div class="input-group date" id="dateTimePicker">
-                            <input type="text" id="date" class="form-control" ng-model="homeCtrl.formData.selectedDateTime" />
+                            <input type="text" id="actualDate" class="form-control" ng-model="homeCtrl.formData.selectedDateTime" ng-change="homeCtrl.updateDateTime()" required />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="players">Select 2 LA Lakers</label>
-                        <!--<input type="text" id="players" class="form-control" ng-model="homeCtrl.formData.players" multiselectvalidator required />-->
-                        <ui-select multiple ng-model="homeCtrl.formData.players" theme="select2" ng-disabled="disabled" class="form-control" multiselectvalidator>
-                            <ui-select-match placeholder="Select 2 LA Lakers...">{{$item.text}}</ui-select-match>
+                        <ui-select id="players" multiple ng-model="homeCtrl.formData.players" theme="select2" ng-disabled="disabled" class="form-control" required>
+                            <ui-select-match allow-clear placeholder="Select 2 LA Lakers...">{{$item.text}}</ui-select-match>
                             <ui-select-choices repeat="player in homeCtrl.players | filter:$select.search">
                                 <div ng-bind-html="player.text | highlight: $select.search"></div>
                             </ui-select-choices>

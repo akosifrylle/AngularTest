@@ -7,10 +7,14 @@ var MyApp;
                 var _this = this;
                 this.$scope = $scope;
                 this.unnamedService = unnamedService;
+                this.formData = new MyApp.Models.FormData();
+
                 $("#formCollapse").collapse();
                 $("#resultCollapsse").collapse({
                     toggle: false
                 });
+
+                $("#dateTimePicker").datetimepicker();
 
                 this.initializeForm();
                 this.initializeResult();
@@ -19,19 +23,16 @@ var MyApp;
                     _this.initializeForm();
                     _this.$scope.$apply();
                 });
+
+                $("#dateTimePicker").on('change.dp', function () {
+                    var value = $("#actualDate").val();
+                    _this.formData.selectedDateTime = value;
+                });
             }
             HomeController.prototype.initializeForm = function () {
                 this.label = "Submit";
                 this.isReady = false;
 
-                //this.colors = [
-                //    { id: 0, text: 'Blue' },
-                //    { id: 1, text: 'Green' },
-                //    { id: 2, text: 'Red' },
-                //    { id: 3, text: 'Orange' },
-                //    { id: 4, text: 'Purple' },
-                //    { id: 5, text: 'Brown' }
-                //];
                 this.colors = ['Blue', 'Green', 'Red', 'Orange', 'Purple', 'Brown'];
 
                 this.players = [
@@ -42,32 +43,6 @@ var MyApp;
                     { id: 4, text: 'Nick Young' },
                     { id: 5, text: 'Paul Pierce' }
                 ];
-
-                $("#skyColor").select2({
-                    placeholder: 'Please select...',
-                    allowClear: true,
-                    data: this.colors,
-                    formatSelection: function (item) {
-                        return item.text;
-                    },
-                    formatResult: function (item) {
-                        return item.text;
-                    }
-                });
-                $("#players").select2({
-                    multiple: true,
-                    placeholder: 'Please select...',
-                    data: this.players,
-                    formatSelection: function (item) {
-                        return item.text;
-                    },
-                    formatResult: function (item) {
-                        return item.text;
-                    },
-                    maximumSelectionSize: 2
-                });
-
-                $("#dateTimePicker").datetimepicker();
             };
 
             HomeController.prototype.initializeResult = function () {
@@ -106,7 +81,7 @@ var MyApp;
                     }, function (error) {
                         console.error(error);
                     });
-                }, 3000);
+                }, 2000);
             };
             HomeController.prototype.open = function ($event) {
                 $event.preventDefault();
