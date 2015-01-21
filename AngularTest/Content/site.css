@@ -39,6 +39,12 @@
         margin-top: 0;
     }
 
+hr {
+    width: 30%;
+    height: 3px;
+    background: #00ced1;
+    margin-top: 20px;
+}
 
 /*/*.select2 > .select2-choice.ui-select-match {
     /* Because of the inclusion of Bootstrap 

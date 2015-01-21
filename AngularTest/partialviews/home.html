@@ -1,5 +1,7 @@
 ﻿<div class="container" style="width: 500px">
     <div class="row">
+        <h1 class="text-center">Practical Assessment</h1>
+     <hr/>
         <div class="collapse" id="formCollapse">
             <form id="userform" name="userform" role="form" class="form-horizontal">
                 <div class="form-group">
@@ -52,7 +54,9 @@
                 <div class="form-group">
                     <div class="col-md-12">
                         <div class="pull-right">
-                            <button class="btn btn-primary" ng-click="homeCtrl.submit()" ng-disabled="userform.$invalid" ng-bind="homeCtrl.label"></button>
+                            <button class="btn btn-primary btn-lg" ng-click="homeCtrl.submit()" ng-disabled="userform.$invalid" ng-bind="homeCtrl.label">
+                                <span class="glyphicon glyphicon-cloud" area-hidden="true">Submit</span>
+                            </button>
                         </div>
                     </div>
                 </div>
