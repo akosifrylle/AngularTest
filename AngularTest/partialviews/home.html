@@ -14,7 +14,7 @@
                         <input type="number" class="form-control" id="dozenNo" ng-model="homeCtrl.formData.dozen" placeholder="Enter a number" required />
                     </div>
                     <div class="col-md-6">
-                        <label for="skyColor">What colour is the sky?Jason</label>
+                        <label for="skyColor">What colour is the sky?</label>
                         <ui-select id="skyColor" ng-model="homeCtrl.formData.skyColor" theme="select2" ng-disabled="disabled" class="form-control" required>
                             <ui-select-match allow-clear placeholder="What colour is the sky?">{{$select.selected}}</ui-select-match>
                             <ui-select-choices repeat="color in homeCtrl.colors | filter:$select.search">
@@ -34,12 +34,13 @@
                     </div>
                     <div class="col-md-6">
                         <label for="players">Select 2 LA Lakers</label>
-                        <ui-select id="players" multiple ng-model="homeCtrl.formData.players" theme="select2" ng-disabled="disabled" class="form-control" required>
-                            <ui-select-match allow-clear placeholder="Select 2 LA Lakers...">{{$item.text}}</ui-select-match>
-                            <ui-select-choices repeat="player in homeCtrl.players | filter:$select.search">
-                                <div ng-bind-html="player.text | highlight: $select.search"></div>
-                            </ui-select-choices>
-                        </ui-select>
+                        <!--<ui-select id="players" multiple ng-model="homeCtrl.formData.players" theme="select2" ng-disabled="disabled" class="form-control" multiselectvalidator>
+                                <ui-select-match placeholder="Select 2 LA Lakers...">{{$item}}</ui-select-match>
+                                <ui-select-choices repeat="player in homeCtrl.players | filter:$select.search">
+                                    <div ng-bind-html="player | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>-->
+                        <input id="_select" class="form-control" required/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -55,7 +56,6 @@
                         </div>
                     </div>
                 </div>
-                <div>{{userform.$error}}</div>
             </form>
         </div>
         <div class="collapse" id="resultCollapsse">

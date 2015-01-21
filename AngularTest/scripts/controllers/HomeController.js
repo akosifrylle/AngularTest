@@ -28,6 +28,20 @@ var MyApp;
                     var value = $("#actualDate").val();
                     _this.formData.selectedDateTime = value;
                 });
+
+                $('#_select').select2({
+                    data: [
+                        { id: 0, text: 'LeBron James' },
+                        { id: 1, text: 'Michael Clarke' },
+                        { id: 2, text: 'Kobe Bryant' },
+                        { id: 3, text: 'Julius Irving' },
+                        { id: 4, text: 'Nick Young' },
+                        { id: 5, text: 'Paul Pierce' }
+                    ],
+                    maximumSelectionSize: 2,
+                    multiple: true,
+                    placeholder: 'Select 2 LA Lakers...'
+                });
             }
             HomeController.prototype.initializeForm = function () {
                 this.label = "Submit";
@@ -36,12 +50,7 @@ var MyApp;
                 this.colors = ['Blue', 'Green', 'Red', 'Orange', 'Purple', 'Brown'];
 
                 this.players = [
-                    { id: 0, text: 'LeBron James' },
-                    { id: 1, text: 'Michael Clarke' },
-                    { id: 2, text: 'Kobe Bryant' },
-                    { id: 3, text: 'Julius Irving' },
-                    { id: 4, text: 'Nick Young' },
-                    { id: 5, text: 'Paul Pierce' }
+                    'LeBron James', 'Michael Clarke', 'Kobe Bryant', 'Julius Irving', 'Nick Young', 'Paul Pierce'
                 ];
             };
 

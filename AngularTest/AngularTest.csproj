@@ -140,9 +140,6 @@
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.8.3.js" />
     <Content Include="scripts\select.js" />
-    <Content Include="views\Shared\Error.cshtml" />
-    <Content Include="views\_ViewStart.cshtml" />
-    <Content Include="views\Shared\_Layout.cshtml" />
     <Content Include="views\web.config" />
     <Content Include="views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">

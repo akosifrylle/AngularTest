@@ -2,8 +2,8 @@
 
 module MyApp.Controllers {
     export class HomeController {
-        private colors: Object[];
-        private players: Object[];
+        private colors: string[];
+        private players: string[];
         private formData: MyApp.Models.FormData;
         private dateTime: Date;
         private isSubmitting: boolean;
@@ -40,6 +40,20 @@ module MyApp.Controllers {
                 var value = $("#actualDate").val();
                 this.formData.selectedDateTime = value;
             });
+
+            $('#_select').select2({
+                data: [
+                    { id: 0, text: 'LeBron James' },
+                    { id: 1, text: 'Michael Clarke' },
+                    { id: 2, text: 'Kobe Bryant' },
+                    { id: 3, text: 'Julius Irving' },
+                    { id: 4, text: 'Nick Young' },
+                    { id: 5, text: 'Paul Pierce' }
+                ],
+                maximumSelectionSize: 2,
+                multiple: true,
+                placeholder: 'Select 2 LA Lakers...'
+            });
         }
 
         public initializeForm() {
@@ -49,12 +63,7 @@ module MyApp.Controllers {
             this.colors = ['Blue', 'Green', 'Red', 'Orange', 'Purple', 'Brown'];
 
             this.players = [
-                { id: 0, text: 'LeBron James' },
-                { id: 1, text: 'Michael Clarke' },
-                { id: 2, text: 'Kobe Bryant' },
-                { id: 3, text: 'Julius Irving' },
-                { id: 4, text: 'Nick Young' },
-                { id: 5, text: 'Paul Pierce' }
+                'LeBron James' , 'Michael Clarke', 'Kobe Bryant', 'Julius Irving', 'Nick Young', 'Paul Pierce'
             ];
         }
 
